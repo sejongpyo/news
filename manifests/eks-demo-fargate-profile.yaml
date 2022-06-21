@@ -1,0 +1,12 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: chatbot
+  region: ap-northeast-2
+fargateProfiles:
+  - name: flask-fargate-profile
+    selectors:
+      - namespace: default
+        labels:
+          app: flask-fargate
